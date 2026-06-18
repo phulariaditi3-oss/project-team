@@ -1,11 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>first project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Food Menu</title>
+  <style>
+    :root {
+      --bg: #050c12;
+      --board: #111820;
+      --board-2: #171f27;
+      --ink: #ffffff;
+      --muted: #b9c0c7;
+      --orange: #ff7a00;
+      --orange-dark: #c55d00;
+      --line: rgba(255, 122, 0, 0.82);
+      --shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 122, 0, 0.12), transparent 28%),
+        radial-gradient(circle at 82% 74%, rgba(255, 255, 255, 0.08), transparent 22%),
+        var(--bg);
+      color: var(--ink);
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Roboto Condensed", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 34px 0 42px;
+    }
+
+    .eyebrow {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      margin: 0 0 34px;
+      font-size: clamp(18px, 3vw, 30px);
+    }
+
+    .menu-board {
+      position: relative;
+      overflow: hidden;
+      min-height: 820px;
+      padding: 48px 54px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)),
+        var(--board);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .menu-board::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(110deg, transparent 0 84%, rgba(255,122,0,0.08) 84% 85%, transparent 85%),
+        radial-gradient(circle at 12% 18%, transparent 0 58px, rgba(255,255,255,0.07) 59px 60px, transparent 61px),
+        radial-gradient(circle at 79% 13%, transparent 0 70px, rgba(255,122,0,0.07) 71px 72px, transparent 73px);
+      opacity: 0.8;
+      z-index: -2;
+    }
+
+    .menu-board::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("https://images.unsplash.com/photo-1606755962773-d324e2dabdce?auto=format&fit=crop&w=900&q=80"),
+        url("https://images.unsplash.com/photo-1528736235302-52922df5c122?auto=format&fit=crop&w=900&q=80"),
+        url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80");
+      background-repeat: no-repeat;
+      background-size: 455px auto, 420px auto, 460px auto;
+      background-position: -62px 108px, calc(100% + 80px) 462px, -70px calc(100% + 42px);
+      filter: drop-shadow(0 22px 24px rgba(0, 0, 0, 0.55));
+      z-index: -1;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      align-items: start;
+      gap: 28px;
+      margin-bottom: 55px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      color: var(--orange);
+      font-size: 20px;
+      font-weight: 900;
+      text-shadow: 0 3px 0 rgba(0,0,0,0.45);
+    }
+
+    .title {
+      text-align: center;
+      margin-right: 70px;
+    }
+
+    .script {
+      display: block;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: clamp(40px, 7vw, 74px);
+      font-weight: 400;
+      line-height: 0.7;
+      transform: rotate(-8deg);
+      text-shadow: 0 4px 0 rgba(0,0,0,0.25);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(50px, 8vw, 92px);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .orange {
+      color: var(--orange);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(260px, 450px) minmax(260px, 420px);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .left-column {
+      padding-top: 415px;
+      display: grid;
+      gap: 58px;
+    }
+
+    .right-column {
+      padding-top: 150px;
+      display: grid;
+      gap: 310px;
+    }
+
+    .menu-section {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      border-bottom: 4px solid var(--line);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .section-title span {
+      font-size: clamp(36px, 5vw, 54px);
+      line-height: 0.95;
+      color: var(--orange);
+    }
+
+    .section-title strong {
+      font-size: clamp(32px, 4.6vw, 52px);
+      line-height: 0.95;
+    }
+
+    .items {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: item;
+    }
+
+    .items li {
+      counter-increment: item;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      color: #f4f5f6;
+      font-size: clamp(22px, 3vw, 31px);
+      line-height: 1.1;
+      text-shadow: 0 3px 0 rgba(0,0,0,0.34);
+    }
+
+    .items li span:first-child::before {
+      content: counter(item) ". ";
+    }
+
+    .price {
+      color: var(--orange);
+      min-width: 68px;
+      text-align: right;
+    }
+
+    .discount {
+      position: absolute;
+      right: 26px;
+      bottom: 0;
+      width: 74px;
+      height: 226px;
+      background: var(--orange);
+      color: #fff;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      align-items: center;
+      justify-items: center;
+      z-index: 3;
+      box-shadow: 0 16px 24px rgba(0,0,0,0.34);
+    }
+
+    .discount strong {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 36px;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .discount span {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 8px 0;
+    }
+
+    .discount b {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0 13px;
+      font-size: 34px;
+      line-height: 1;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .sticker {
+      position: absolute;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.65);
+      background:
+        radial-gradient(circle at 50% 50%, #ffde67 0 15%, transparent 16%),
+        conic-gradient(#83c447, #e84b2a, #f7c443, #83c447);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+      opacity: 0.95;
+      z-index: 2;
+    }
+
+    .sticker.one { left: 51%; top: 47%; transform: rotate(-18deg); }
+    .sticker.two { left: 49%; bottom: 3%; transform: rotate(14deg) scale(0.82); }
+    .sticker.three { right: 41%; top: 67%; transform: rotate(9deg) scale(0.75); }
+
+    .swirl {
+      position: absolute;
+      width: 118px;
+      height: 50px;
+      border-top: 3px solid rgba(255,255,255,0.82);
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .swirl.a { left: 290px; top: 58px; transform: rotate(102deg); }
+    .swirl.b { right: 340px; top: 420px; transform: rotate(150deg); }
+    .swirl.c { left: 420px; bottom: 54px; transform: rotate(24deg); }
+
+    .mobile-food {
+      display: none;
+      gap: 12px;
+      margin: 24px 0 6px;
+    }
+
+    .mobile-food img {
+      min-width: 0;
+      width: 100%;
+      aspect-ratio: 1.25;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .featured-burger {
+      position: absolute;
+      left: 34px;
+      top: 126px;
+      width: min(43vw, 470px);
+      z-index: 1;
+      filter: drop-shadow(0 28px 28px rgba(0, 0, 0, 0.62));
+      pointer-events: none;
+    }
+
+    .featured-burger img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+
+    .food-sequence {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 98px 0 0;
+    }
+
+    .food-shot {
+      position: relative;
+      min-height: 150px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0b1117;
+      box-shadow: 0 16px 26px rgba(0,0,0,0.32);
+    }
+
+    .food-shot img {
+      width: 100%;
+      height: 100%;
+      min-height: 150px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .food-shot span {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      background: var(--orange);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 21px;
+      line-height: 1;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.35);
+    }
+
+    .specials {
+      position: relative;
+      z-index: 2;
+      margin-top: 42px;
+      margin-right: 98px;
+      padding: 18px;
+      border: 1px solid rgba(255, 122, 0, 0.34);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255, 122, 0, 0.18), rgba(255, 255, 255, 0.04));
+    }
+
+    .specials-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      border-bottom: 3px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    .specials-head h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+
+    .order-now {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 14px;
+      border-radius: var(--radius);
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 20px;
+      box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+      white-space: nowrap;
+    }
+
+    .combo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .combo-card {
+      min-height: 132px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(5, 12, 18, 0.68);
+      padding: 14px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .combo-card strong {
+      color: var(--orange);
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .combo-card p {
+      margin: 8px 0 10px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .combo-card span {
+      font-size: 28px;
+      justify-self: end;
+      color: #fff;
+    }
+
+    @media (max-width: 980px) {
+      .menu-board {
+        padding: 32px 24px 110px;
+      }
+
+      .menu-board::after {
+        opacity: 0.42;
+        background-size: 360px auto, 320px auto, 340px auto;
+        background-position: -90px 130px, calc(100% + 120px) 420px, -80px calc(100% + 16px);
+      }
+
+      .featured-burger {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin: 20px 0 4px;
+      }
+
+      .header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      .title {
+        text-align: left;
+        margin-right: 0;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .left-column,
+      .right-column {
+        padding-top: 0;
+        gap: 26px;
+      }
+
+      .right-column {
+        gap: 26px;
+      }
+
+      .menu-section {
+        max-width: none;
+      }
+
+      .mobile-food {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .sticker,
+      .swirl {
+        display: none;
+      }
+
+      .discount {
+        right: 22px;
+        height: 92px;
+        width: calc(100% - 44px);
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 1fr;
+        bottom: 20px;
+      }
+
+      .discount strong,
+      .discount span {
+        writing-mode: initial;
+        transform: none;
+      }
+
+      .discount strong {
+        padding-left: 18px;
+        font-size: 34px;
+      }
+
+      .discount b {
+        width: auto;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 0 18px;
+      }
+
+      .specials {
+        margin-right: 0;
+      }
+
+      .food-sequence {
+        margin-right: 0;
+      }
+
+      .combo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 16px, 1180px);
+        padding-top: 22px;
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+      }
+
+      .menu-board {
+        padding: 24px 16px 128px;
+      }
+
+      .menu-board::after {
+        display: none;
+      }
+
+      .featured-burger img {
+        max-height: 280px;
+        object-fit: cover;
+      }
+
+      .mobile-food {
+        grid-template-columns: 1fr;
+      }
+
+      .food-sequence {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        white-space: normal;
+      }
+
+      .items li {
+        font-size: 23px;
+      }
+
+      .price {
+        min-width: 52px;
+      }
+
+      .discount {
+        height: 102px;
+        grid-template-columns: 1fr auto;
+      }
+
+      .discount span {
+        grid-column: 1 / -1;
+        order: 3;
+        padding: 0 10px 8px;
+        text-align: center;
+      }
+
+      .specials-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .order-now {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>project1</h1>
+  <main class="page">
+    <p class="eyebrow">IMAGE NOT INCLUDED</p>
+
+    <section class="menu-board" aria-label="Special food menu">
+      <div class="sticker one"></div>
+      <div class="sticker two"></div>
+      <div class="sticker three"></div>
+      <div class="swirl a"></div>
+      <div class="swirl b"></div>
+      <div class="swirl c"></div>
+
+      <header class="header">
+        <div class="logo">Logo Here</div>
+        <div class="title">
+          <span class="script">Special</span>
+          <h1><span class="orange">Food</span> Menu</h1>
+        </div>
+      </header>
+
+      <figure class="featured-burger" aria-label="Featured cheeseburger">
+        <img src="https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png" alt="Cheeseburger with lettuce, tomato, onion, and sesame bun" />
+      </figure>
+
+      <div class="food-sequence" aria-label="Food image sequence">
+        <figure class="food-shot">
+          <img src="https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png" alt="Cheeseburger" />
+          <span>Burger</span>
+        </figure>
+        <figure class="food-shot">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80" alt="Pizza with tomatoes and herbs" />
+          <span>Pizza</span>
+        </figure>
+        <figure class="food-shot">
+          <img src="https://images.unsplash.com/photo-1528736235302-52922df5c122?auto=format&fit=crop&w=700&q=80" alt="Fresh sandwich" />
+          <span>Sandwich</span>
+        </figure>
+      </div>
+
+      <div class="mobile-food" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e2dabdce?auto=format&fit=crop&w=700&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1528736235302-52922df5c122?auto=format&fit=crop&w=700&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80" alt="" />
+      </div>
+
+      <div class="content">
+        <div class="left-column">
+          <section class="menu-section">
+            <h2 class="section-title"><span>Sandwich</span> <strong>Menu</strong></h2>
+            <ol class="items">
+              <li><span>Cheese Sandwich</span><span class="price">-$19</span></li>
+              <li><span>American Sandwich</span><span class="price">-$23</span></li>
+              <li><span>Greek Sandwich</span><span class="price">-$20</span></li>
+              <li><span>Meat Sandwich</span><span class="price">-$18</span></li>
+            </ol>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <section class="menu-section">
+            <h2 class="section-title"><span>Burger</span> <strong>Menu</strong></h2>
+            <ol class="items">
+              <li><span>Cheese Burger</span><span class="price">-$19</span></li>
+              <li><span>American Burger</span><span class="price">-$23</span></li>
+              <li><span>Greek Burger</span><span class="price">-$20</span></li>
+              <li><span>Meat Burger</span><span class="price">-$18</span></li>
+            </ol>
+          </section>
+
+          <section class="menu-section">
+            <h2 class="section-title"><span>Pizza</span> <strong>Menu</strong></h2>
+            <ol class="items">
+              <li><span>Cheese Pizza</span><span class="price">-$19</span></li>
+              <li><span>American Pizza</span><span class="price">-$23</span></li>
+              <li><span>Greek pizza</span><span class="price">-$20</span></li>
+              <li><span>Meat Pizza</span><span class="price">-$18</span></li>
+            </ol>
+          </section>
+        </div>
+      </div>
+
+      <section class="specials" aria-label="Today's special combo meals">
+        <div class="specials-head">
+          <h2><span class="orange">Today's</span> Special Combos</h2>
+          <a class="order-now" href="tel:+1234567890">Order Now</a>
+        </div>
+        <div class="combo-grid">
+          <article class="combo-card">
+            <strong>Burger Feast</strong>
+            <p>Cheese burger, crispy fries, and chilled cola.</p>
+            <span>$29</span>
+          </article>
+          <article class="combo-card">
+            <strong>Pizza Party</strong>
+            <p>Medium cheese pizza with garlic bread and dip.</p>
+            <span>$34</span>
+          </article>
+          <article class="combo-card">
+            <strong>Lunch Box</strong>
+            <p>Greek sandwich, fresh salad, and lemon drink.</p>
+            <span>$25</span>
+          </article>
+        </div>
+      </section>
+
+      <aside class="discount" aria-label="Discount for premium customers">
+        <strong>Discount</strong>
+        <span>For premium customers</span>
+        <b>15%</b>
+      </aside>
+    </section>
+  </main>
 </body>
 </html>
