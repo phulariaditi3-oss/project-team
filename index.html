@@ -1,11 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>first project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Shivaji Polytechnic, Parbhani</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>project1</h1>
+  <!-- Sticky navigation -->
+  <header class="site-header" id="top">
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <span class="logo-mark">SSP</span>
+        <span>Shree Shivaji Polytechnic</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#branches">Branches</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#faculty">Faculty</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section -->
+    <section class="hero section" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Parbhani, Maharashtra</p>
+        <h1>Shree Shivaji Polytechnic, Parbhani</h1>
+        <p class="tagline">Empowering Future Engineers</p>
+        <a href="#about" class="btn btn-primary pulse">Explore More</a>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about section"></a>
+    </section>
+
+    <!-- About college -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About College</p>
+          <h2>A disciplined campus for practical engineering education</h2>
+          <p>
+            Shree Shivaji Polytechnic, Parbhani is committed to nurturing technically skilled,
+            confident, and industry-ready diploma engineers through classroom learning, modern
+            laboratories, project work, and value-based education.
+          </p>
+        </div>
+
+        <div class="vision-grid">
+          <article class="info-card reveal">
+            <span class="card-icon">VI</span>
+            <h3>Vision</h3>
+            <p>To become a leading polytechnic institute that prepares students for innovation, service, and lifelong learning.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="card-icon">MI</span>
+            <h3>Mission</h3>
+            <p>To provide strong technical foundations, hands-on training, ethical values, and career guidance for every learner.</p>
+          </article>
+        </div>
+
+        <div class="stats-grid reveal">
+          <article class="stat-card">
+            <strong><span class="counter" data-target="4">0</span></strong>
+            <span>Branches</span>
+          </article>
+          <article class="stat-card">
+            <strong><span class="counter" data-target="1000">0</span>+</strong>
+            <span>Students</span>
+          </article>
+          <article class="stat-card">
+            <strong>Expert</strong>
+            <span>Experienced Faculty</span>
+          </article>
+          <article class="stat-card">
+            <strong>Modern</strong>
+            <span>Labs</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branches section -->
+    <section class="section branches" id="branches">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Academic Branches</p>
+          <h2>Diploma programs built around real engineering skills</h2>
+        </div>
+
+        <div class="card-grid four">
+          <article class="branch-card reveal">
+            <span class="branch-icon">CE</span>
+            <h3>Computer Engineering</h3>
+            <p>Learn software development, problem solving, databases, and emerging computing technologies.</p>
+            <ul>
+              <li>Programming</li>
+              <li>AI &amp; ML</li>
+              <li>Web Development</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Learn More</a>
+          </article>
+
+          <article class="branch-card reveal">
+            <span class="branch-icon">ET</span>
+            <h3>ENTC Engineering</h3>
+            <p>Explore electronics, communication networks, circuits, and embedded technology systems.</p>
+            <ul>
+              <li>Communication Systems</li>
+              <li>Networking</li>
+              <li>Embedded Systems</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Learn More</a>
+          </article>
+
+          <article class="branch-card reveal">
+            <span class="branch-icon">CV</span>
+            <h3>Civil Engineering</h3>
+            <p>Build fundamentals in planning, designing, surveying, and managing civil infrastructure projects.</p>
+            <ul>
+              <li>Construction</li>
+              <li>Surveying</li>
+              <li>Structural Design</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Learn More</a>
+          </article>
+
+          <article class="branch-card reveal">
+            <span class="branch-icon">ME</span>
+            <h3>Mechanical Engineering</h3>
+            <p>Study machines, production methods, CAD tools, thermal systems, and industrial automation.</p>
+            <ul>
+              <li>Manufacturing</li>
+              <li>CAD Design</li>
+              <li>Automation</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities section -->
+    <section class="section facilities" id="facilities">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Campus Facilities</p>
+          <h2>Spaces that support study, practice, and growth</h2>
+        </div>
+
+        <div class="facility-grid">
+          <article class="facility-card reveal"><span>CL</span><h3>Computer Labs</h3><p>Updated systems for programming, design, and practical sessions.</p></article>
+          <article class="facility-card reveal"><span>LB</span><h3>Library</h3><p>Technical books, reference material, journals, and quiet reading areas.</p></article>
+          <article class="facility-card reveal"><span>WS</span><h3>Workshop</h3><p>Hands-on training for manufacturing, fitting, welding, and machine practice.</p></article>
+          <article class="facility-card reveal"><span>SC</span><h3>Smart Classrooms</h3><p>Interactive teaching spaces with digital learning support.</p></article>
+          <article class="facility-card reveal"><span>SG</span><h3>Sports Ground</h3><p>Open play areas for fitness, teamwork, and student events.</p></article>
+          <article class="facility-card reveal"><span>WF</span><h3>Wi-Fi Campus</h3><p>Internet access for research, learning resources, and project work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty section -->
+    <section class="section faculty" id="faculty">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Faculty</p>
+          <h2>Guidance from experienced teaching professionals</h2>
+        </div>
+
+        <div class="card-grid four">
+          <article class="faculty-card reveal">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Faculty profile">
+            <h3>Prof. Amit Deshmukh</h3>
+            <p>Computer Engineering</p>
+            <span>Head of Department</span>
+          </article>
+          <article class="faculty-card reveal">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Faculty profile">
+            <h3>Prof. Sneha Kulkarni</h3>
+            <p>ENTC Engineering</p>
+            <span>Lecturer</span>
+          </article>
+          <article class="faculty-card reveal">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" alt="Faculty profile">
+            <h3>Prof. Rahul Shinde</h3>
+            <p>Civil Engineering</p>
+            <span>Senior Lecturer</span>
+          </article>
+          <article class="faculty-card reveal">
+            <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=400&q=80" alt="Faculty profile">
+            <h3>Prof. Meera Patil</h3>
+            <p>Mechanical Engineering</p>
+            <span>Workshop In-charge</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student achievements -->
+    <section class="section achievements" id="achievements">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Student Achievements</p>
+          <h2>Projects, placements, and academic excellence</h2>
+        </div>
+
+        <div class="achievement-grid">
+          <article class="achievement-card reveal">
+            <h3>Placement Highlights</h3>
+            <p>Students are prepared for campus drives through aptitude sessions, technical interviews, and communication training.</p>
+          </article>
+          <article class="achievement-card reveal">
+            <h3>Academic Excellence</h3>
+            <p>Regular mentoring, practical work, and exam support help students perform strongly in diploma examinations.</p>
+          </article>
+          <article class="achievement-card reveal">
+            <h3>Project Innovation</h3>
+            <p>Final-year students create working models in automation, web apps, structural models, IoT, and machine design.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Gallery</p>
+          <h2>Campus moments and learning spaces</h2>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80" alt="College campus building">
+          <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" alt="Engineering workshop">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Computer lab teamwork">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Students studying together">
+          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80" alt="Library and reading area">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Classroom learning">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-details reveal">
+          <p class="eyebrow">Contact Us</p>
+          <h2>Shree Shivaji Polytechnic, Parbhani</h2>
+          <p>Reach out for admission details, department information, campus visits, and academic support.</p>
+          <ul>
+            <li><strong>Address:</strong> Parbhani, Maharashtra, India</li>
+            <li><strong>Phone:</strong> +91 98765 43210</li>
+            <li><strong>Email:</strong> info@shivajipolyparbhani.edu.in</li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name">
+          <small class="error-message"></small>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+          <small class="error-message"></small>
+
+          <label for="branch">Branch</label>
+          <select id="branch" name="branch">
+            <option value="">Select branch</option>
+            <option>Computer Engineering</option>
+            <option>ENTC Engineering</option>
+            <option>Civil Engineering</option>
+            <option>Mechanical Engineering</option>
+          </select>
+          <small class="error-message"></small>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea>
+          <small class="error-message"></small>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-success" id="formSuccess">Thank you! Your message has been validated successfully.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Shree Shivaji Polytechnic</h3>
+        <p>Empowering Future Engineers through practical, modern diploma education.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#about">About</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Branch Links</h4>
+        <a href="#branches">Computer Engineering</a>
+        <a href="#branches">ENTC Engineering</a>
+        <a href="#branches">Civil Engineering</a>
+        <a href="#branches">Mechanical Engineering</a>
+      </div>
+      <div>
+        <h4>Social Media</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">yt</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Shree Shivaji Polytechnic, Parbhani. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Gallery modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">&times;</button>
+    <img id="lightboxImage" src="" alt="Gallery preview">
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
