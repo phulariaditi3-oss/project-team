@@ -341,5 +341,332 @@
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
 
   <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shri Shivahi Polytechnic Institute - premium diploma engineering education, modern labs, industry placements, and future-ready learning.">
+    <title>Shri Shivahi Polytechnic Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sticky navigation is intentionally simple so it can be reused by a Java backend template later. -->
+    <header class="site-header" id="siteHeader">
+        <nav class="navbar" aria-label="Primary navigation">
+            <a class="brand" href="#home" aria-label="Shri Shivahi Polytechnic Institute home">
+                <span class="brand-mark">SS</span>
+                <span>
+                    <strong>Shri Shivahi</strong>
+                    <small>Polytechnic Institute</small>
+                </span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#placements">Placements</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero: full-screen campus image with a strong admissions call-to-action. -->
+        <section class="hero" id="home" aria-label="Institute introduction">
+            <div class="hero-overlay"></div>
+            <div class="hero-content reveal">
+                <p class="eyebrow">AICTE-ready diploma education for tomorrow's engineers</p>
+                <h1>Shri Shivahi Polytechnic Institute</h1>
+                <p class="hero-tagline">Where practical engineering, disciplined mentorship, and industry exposure shape confident technical professionals.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#admissions">Apply Now</a>
+                    <a class="btn btn-secondary" href="#courses">Explore Courses</a>
+                </div>
+            </div>
+            <div class="hero-panel reveal">
+                <span>2026 Admissions Open</span>
+                <strong>Diploma Engineering Programs</strong>
+                <p>Hands-on labs, placement guidance, and project-based learning from semester one.</p>
+            </div>
+        </section>
+
+        <!-- About: institute positioning, vision, mission, and leadership voice. -->
+        <section class="section about" id="about">
+            <div class="section-heading reveal">
+                <p class="eyebrow">About Institute</p>
+                <h2>Built for disciplined learning and real-world engineering skills.</h2>
+                <p>Our campus blends modern technical infrastructure with a mentorship culture that helps students become job-ready, responsible, and inventive.</p>
+            </div>
+            <div class="about-grid">
+                <article class="glass-card reveal">
+                    <span class="card-icon">◎</span>
+                    <h3>Vision</h3>
+                    <p>To become a trusted polytechnic institute known for ethical technical education, innovation, and strong industry outcomes.</p>
+                </article>
+                <article class="glass-card reveal">
+                    <span class="card-icon">◇</span>
+                    <h3>Mission</h3>
+                    <p>To deliver skill-centered diploma programs through advanced labs, expert faculty, internships, and community-focused projects.</p>
+                </article>
+                <article class="glass-card principal-card reveal">
+                    <span class="card-icon">✦</span>
+                    <h3>Principal's Message</h3>
+                    <p>We guide every learner to think clearly, build confidently, and serve society through practical engineering excellence.</p>
+                    <strong>- Principal, SSPI</strong>
+                </article>
+            </div>
+        </section>
+
+        <!-- Why choose us: high-value differentiators shown as glassmorphism feature cards. -->
+        <section class="section why">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Why Choose Us</p>
+                <h2>A premium technical campus experience with measurable student support.</h2>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card reveal"><span>⚙</span><h3>Project Labs</h3><p>Dedicated workbenches, simulation tools, and guided mini-projects.</p></article>
+                <article class="feature-card reveal"><span>▣</span><h3>Industry Mentors</h3><p>Guest lectures, career sessions, and practical skill workshops.</p></article>
+                <article class="feature-card reveal"><span>◈</span><h3>Smart Campus</h3><p>Digital classrooms, Wi-Fi zones, and learning-friendly spaces.</p></article>
+                <article class="feature-card reveal"><span>▲</span><h3>Career Focus</h3><p>Placement training, aptitude sessions, resume clinics, and mock interviews.</p></article>
+            </div>
+        </section>
+
+        <!-- Statistics are animated once when this band becomes visible. -->
+        <section class="stats-band" aria-label="Institute statistics">
+            <div class="stat reveal"><strong data-counter="2400">0</strong><span>Students</span></div>
+            <div class="stat reveal"><strong data-counter="120">0</strong><span>Faculty</span></div>
+            <div class="stat reveal"><strong data-counter="38">0</strong><span>Modern Labs</span></div>
+            <div class="stat reveal"><strong data-counter="100">0</strong><span>% Placement Assistance</span></div>
+        </section>
+
+        <!-- Diploma courses: backend-friendly cards that can later be rendered dynamically. -->
+        <section class="section courses" id="courses">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Diploma Courses</p>
+                <h2>Choose a technical pathway with strong career relevance.</h2>
+            </div>
+            <div class="course-grid">
+                <article class="course-card reveal"><span>CS</span><h3>Computer Engineering</h3><p>Programming, databases, cloud basics, software projects, and AI foundations.</p></article>
+                <article class="course-card reveal"><span>IT</span><h3>Information Technology</h3><p>Networks, web systems, cybersecurity basics, and enterprise applications.</p></article>
+                <article class="course-card reveal"><span>CE</span><h3>Civil Engineering</h3><p>Surveying, construction materials, CAD, estimation, and site practices.</p></article>
+                <article class="course-card reveal"><span>ME</span><h3>Mechanical Engineering</h3><p>Manufacturing, thermodynamics, machine design, CAD/CAM, and maintenance.</p></article>
+                <article class="course-card reveal"><span>EE</span><h3>Electrical Engineering</h3><p>Power systems, machines, control panels, wiring, and renewable energy basics.</p></article>
+                <article class="course-card reveal"><span>ET</span><h3>Electronics & Telecommunication</h3><p>Embedded systems, circuits, communication, IoT, and instrumentation.</p></article>
+            </div>
+        </section>
+
+        <section class="section departments" id="departments">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Departments</p>
+                <h2>Specialized academic departments with focused lab ecosystems.</h2>
+            </div>
+            <div class="department-strip reveal">
+                <a href="#courses">Computer</a>
+                <a href="#courses">Information Technology</a>
+                <a href="#courses">Civil</a>
+                <a href="#courses">Mechanical</a>
+                <a href="#courses">Electrical</a>
+                <a href="#courses">E&TC</a>
+            </div>
+        </section>
+
+        <!-- Facilities: image-led cards for a premium campus feel. -->
+        <section class="section facilities" id="facilities">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Campus Facilities</p>
+                <h2>Everything students need to study, build, compete, and grow.</h2>
+            </div>
+            <div class="facility-grid">
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="Library reading area"><h3>Library</h3></article>
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80" alt="Engineering laboratory"><h3>Labs</h3></article>
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=900&q=80" alt="Hostel building"><h3>Hostel</h3></article>
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80" alt="Campus transport bus"><h3>Transport</h3></article>
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=80" alt="Sports ground"><h3>Sports</h3></article>
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Student using Wi-Fi"><h3>Wi-Fi</h3></article>
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80" alt="Canteen seating"><h3>Canteen</h3></article>
+                <article class="facility-card reveal"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80" alt="Auditorium event"><h3>Auditorium</h3></article>
+            </div>
+        </section>
+
+        <section class="section placements" id="placements">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Placements</p>
+                <h2>Career preparation that connects classroom effort to industry opportunity.</h2>
+            </div>
+            <div class="placement-card reveal">
+                <div>
+                    <h3>Training & Placement Cell</h3>
+                    <p>Students receive technical assessments, communication training, aptitude practice, industry talks, internships, and company-specific preparation.</p>
+                </div>
+                <a class="btn btn-primary" href="#contact">Talk to Admissions</a>
+            </div>
+            <div class="logo-cloud reveal" aria-label="Recruiter logos">
+                <span>TCS</span><span>Infosys</span><span>Wipro</span><span>Capgemini</span><span>Tech Mahindra</span><span>Cognizant</span><span>Accenture</span>
+            </div>
+        </section>
+
+        <!-- Testimonials are powered by the vanilla JavaScript slider in script.js. -->
+        <section class="section testimonials">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Student Voices</p>
+                <h2>Stories from students building their future here.</h2>
+            </div>
+            <div class="testimonial-shell reveal">
+                <button class="slider-btn" id="prevTestimonial" aria-label="Previous testimonial">‹</button>
+                <article class="testimonial-card" id="testimonialCard">
+                    <p id="testimonialText"></p>
+                    <h3 id="testimonialName"></h3>
+                    <span id="testimonialCourse"></span>
+                </article>
+                <button class="slider-btn" id="nextTestimonial" aria-label="Next testimonial">›</button>
+            </div>
+        </section>
+
+        <!-- Gallery items open in a custom lightbox without external libraries. -->
+        <section class="section gallery" id="gallery">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Gallery</p>
+                <h2>A glimpse of workshops, labs, events, and student life.</h2>
+            </div>
+            <div class="gallery-grid">
+                <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=85"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=700&q=80" alt="College campus building"></button>
+                <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=85"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80" alt="Students in classroom"></button>
+                <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1400&q=85"><img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80" alt="Mechanical workshop"></button>
+                <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?auto=format&fit=crop&w=1400&q=85"><img src="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?auto=format&fit=crop&w=700&q=80" alt="Electronics lab"></button>
+                <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1400&q=85"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=700&q=80" alt="Student event"></button>
+                <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=85"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=700&q=80" alt="Students collaborating"></button>
+            </div>
+        </section>
+
+        <section class="section admissions" id="admissions">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Admissions</p>
+                <h2>A clear, guided admission process for every applicant.</h2>
+            </div>
+            <div class="timeline">
+                <article class="timeline-item reveal"><span>01</span><h3>Enquiry</h3><p>Connect with the admissions team and choose your preferred diploma program.</p></article>
+                <article class="timeline-item reveal"><span>02</span><h3>Document Check</h3><p>Submit academic records, identity proof, photos, and category documents if applicable.</p></article>
+                <article class="timeline-item reveal"><span>03</span><h3>Counselling</h3><p>Meet faculty advisors to understand curriculum, labs, career paths, and fees.</p></article>
+                <article class="timeline-item reveal"><span>04</span><h3>Confirmation</h3><p>Complete fee payment, enrollment formalities, and orientation registration.</p></article>
+            </div>
+        </section>
+
+        <section class="section faq">
+            <div class="section-heading reveal">
+                <p class="eyebrow">FAQ</p>
+                <h2>Common questions from students and parents.</h2>
+            </div>
+            <div class="faq-list reveal">
+                <article class="faq-item">
+                    <button>Which diploma courses are available?<span>+</span></button>
+                    <p>Computer, IT, Civil, Mechanical, Electrical, and Electronics & Telecommunication Engineering diploma programs are available.</p>
+                </article>
+                <article class="faq-item">
+                    <button>Does the institute provide placement support?<span>+</span></button>
+                    <p>Yes. The Training & Placement Cell supports aptitude training, technical preparation, internships, and company interaction.</p>
+                </article>
+                <article class="faq-item">
+                    <button>Are hostel and transport facilities available?<span>+</span></button>
+                    <p>Yes. Students can access hostel support, campus transport routes, canteen, sports, library, labs, Wi-Fi, and auditorium facilities.</p>
+                </article>
+                <article class="faq-item">
+                    <button>How can I apply for admission?<span>+</span></button>
+                    <p>Use the contact form, call the admissions office, or visit the campus with your documents for guided counselling.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact form uses client-side validation and is ready for backend integration. -->
+        <section class="section contact" id="contact">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Contact</p>
+                <h2>Start your admission conversation with us.</h2>
+            </div>
+            <div class="contact-grid">
+                <form class="contact-form glass-card reveal" id="contactForm" novalidate>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    <label for="course">Interested Course</label>
+                    <select id="course" name="course">
+                        <option value="">Select course</option>
+                        <option>Computer Engineering</option>
+                        <option>Information Technology</option>
+                        <option>Civil Engineering</option>
+                        <option>Mechanical Engineering</option>
+                        <option>Electrical Engineering</option>
+                        <option>Electronics & Telecommunication</option>
+                    </select>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us what you want to know"></textarea>
+                    <p class="form-status" id="formStatus" aria-live="polite"></p>
+                    <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+                </form>
+
+                <div class="contact-info reveal">
+                    <div class="map-placeholder">
+                        <span>Map Placeholder</span>
+                        <p>Shri Shivahi Polytechnic Institute Campus</p>
+                    </div>
+                    <article>
+                        <h3>Campus Address</h3>
+                        <p>Shri Shivahi Polytechnic Institute, Main Road, Maharashtra, India</p>
+                        <p><strong>Phone:</strong> +91 98765 43210</p>
+                        <p><strong>Email:</strong> admissions@shrishivahi.edu.in</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <a class="brand footer-brand" href="#home">
+                <span class="brand-mark">SS</span>
+                <span><strong>Shri Shivahi</strong><small>Polytechnic Institute</small></span>
+            </a>
+            <p>Premium diploma engineering education with practical learning, values, and industry orientation.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#placements">Placements</a>
+            <a href="#admissions">Admissions</a>
+        </div>
+        <div>
+            <h3>Social</h3>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">ig</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="YouTube">yt</a>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+        <button id="closeLightbox" aria-label="Close gallery preview">×</button>
+        <img id="lightboxImage" src="" alt="Expanded gallery view">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
